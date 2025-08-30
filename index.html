@@ -1,71 +1,380 @@
-Title: BillMint – Privacy Policy
-Effective date: 29 Aug 2025
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <title>BillMint – Privacy Policy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="BillMint Privacy Policy — how we collect, use, and protect your data. Effective 29 Aug 2025." />
+  <meta name="author" content="Francis Oyitoba" />
+  <meta name="robots" content="index,follow" />
 
-Who we are
-BillMint (“we”, “our”, “us”) helps you create invoices/receipts and manage client records.
+  <!-- Open Graph -->
+  <meta property="og:title" content="BillMint – Privacy Policy" />
+  <meta property="og:description" content="How BillMint collects, uses, and protects your information. Effective 29 Aug 2025." />
+  <meta property="og:type" content="website" />
+  <!-- Update this to your final policy URL if you have a dedicated domain/path -->
+  <meta property="og:url" content="https://francisoyitoba.com" />
 
-Information we collect
+  <link rel="icon" href="favicon.ico" />
 
-Account info: Email (when you sign in with Google).
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
 
-Business data: Client names, invoice/receipt details you save.
+  <!-- Persist saved theme before paint -->
+  <script>
+    (function () {
+      try {
+        var pref = localStorage.getItem('theme');
+        document.documentElement.setAttribute('data-theme', pref === 'dark' ? 'dark' : 'light');
+      } catch(e) {}
+    })();
+  </script>
 
-Device info: App version, device model, IP address.
+  <style>
+    :root{
+      /* Spacing scale */
+      --space-1:.25rem; --space-2:.375rem; --space-3:.5rem; --space-4:.75rem; --space-5:1rem;
+      --space-6:1.25rem; --space-7:1.5rem; --space-8:1.75rem; --space-9:2rem; --radius:14px;
+    }
+    :root[data-theme="light"]{
+      --bg:#ffffff;
+      --text:#0f1720;
+      --muted:#66748b;
+      --primary:#2563eb;
+      --surface:#ffffff;
+      --surface-2:#f6f7fb;
+      --border:#e5e7eb;
+      --shadow-1: 0 6px 20px rgba(0,0,0,.06);
+      --shadow-2: 0 20px 50px rgba(0,0,0,.08);
+      --link:#1e40af;
+      --ok:#059669;
+      --warn:#b45309;
+    }
+    :root[data-theme="dark"]{
+      --bg:#0b0f14;
+      --text:#e6edf6;
+      --muted:#9aa6b2;
+      --primary:#7aa2ff;
+      --surface:#0f141b;
+      --surface-2:#111824;
+      --border:#1e293b;
+      --shadow-1: 0 8px 26px rgba(0,0,0,.45);
+      --shadow-2: 0 28px 70px rgba(0,0,0,.55);
+      --link:#9bbcff;
+      --ok:#34d399;
+      --warn:#fbbf24;
+    }
 
-Advertising data: Through Google AdMob (may use device identifiers such as the Advertising ID).
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:var(--bg); color:var(--text);
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    }
+    a{color:var(--link); text-decoration:none}
+    a:hover{text-decoration:underline}
+    img{max-width:100%; height:auto; display:block}
 
-Purchases: Google Play billing status for “Remove Ads”.
+    .container{max-width:980px; margin:0 auto; padding:0 var(--space-5)}
+    .site-header{
+      position:sticky; top:0; z-index:40;
+      background:color-mix(in srgb, var(--surface) 82%, transparent);
+      backdrop-filter:saturate(1.2) blur(12px);
+      border-bottom:1px solid var(--border);
+    }
+    .header-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: .7rem 0;
+    }
+    .brand{display:flex; align-items:center; gap:.6rem; text-decoration:none; color:inherit; font-weight:800}
+    .brand-dot{width:.9rem; height:.9rem; border-radius:999px; background:var(--primary); display:inline-block}
+    .brand-text{letter-spacing:.2px}
 
-How we use information
+    .header-ctas{display:flex; align-items:center; gap:.5rem}
+    .theme-toggle{
+      display:inline-flex; gap:.45rem; align-items:center; border:1px solid var(--border); border-radius:999px;
+      padding:.45rem .7rem; background:var(--surface); color:var(--text); cursor:pointer;
+    }
+    .icon-sun{display:none}
+    [data-theme="dark"] .icon-sun{display:inline-block}
+    [data-theme="dark"] .icon-moon{display:none}
 
-Provide core features (invoices, receipts, clients).
+    .btn{display:inline-flex; align-items:center; gap:.5rem; border:1px solid var(--border); border-radius:10px; padding:.5rem .75rem; background:var(--surface); color:var(--text); text-decoration:none; box-shadow:var(--shadow-1)}
+    .btn-primary{background:var(--primary); color:#fff; border-color:transparent}
+    .btn-ghost{background:transparent}
 
-Sync your data with our servers (if applicable).
+    .skip-link{position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden}
+    .skip-link:focus{left: var(--space-5); top: var(--space-5); width:auto; height:auto; padding:.5rem .75rem; background:var(--surface); border:1px solid var(--border); border-radius:8px}
 
-Show ads via Google AdMob (or hide them if you purchase “Remove Ads”).
+    .hero{padding: 3.25rem 0 1.5rem; border-bottom:1px solid var(--border); background:linear-gradient(180deg, color-mix(in srgb, var(--surface-2) 40%, transparent), transparent 60%)}
+    .eyebrow{font-size:.9rem; text-transform:uppercase; letter-spacing:.12em; color:var(--muted); margin:0 0 .4rem}
+    h1{font-size:clamp(1.7rem, 1.1rem + 2vw, 2.4rem); line-height:1.2; margin:.25rem 0 .5rem}
+    .lead{font-size:1.08rem; line-height:1.7; color:var(--muted); margin:.25rem 0}
 
-Improve stability and detect abuse.
+    .section{padding: 1.6rem 0}
+    .toc{
+      border:1px solid var(--border); border-radius:var(--radius); background:var(--surface);
+      padding:1rem; box-shadow:var(--shadow-1); margin: 1rem 0;
+    }
+    .toc h2{margin:.1rem 0 .6rem; font-size:1.05rem}
+    .toc ul{margin:0; padding-left:1.15rem; columns: 1}
+    @media(min-width:900px){ .toc ul{columns: 2; column-gap:2rem;} }
+    .toc a{line-height:1.9}
 
-Ads & consent (EEA/UK)
-We use Google AdMob. In the EEA/UK we use Google’s User Messaging Platform (UMP) to collect your consent for personalized or non-personalized ads, or to reject ads where applicable.
+    .card{
+      background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
+      padding: clamp(1rem, .9rem + 1vw, 1.25rem); box-shadow:var(--shadow-1);
+    }
+    .stack > * + *{ margin-top: var(--space-6); }
+    .stack-sm > * + *{ margin-top: var(--space-4); }
+    .muted{color:var(--muted)}
+    h2{margin:0 0 .6rem; font-size: clamp(1.25rem, 1.05rem + .8vw, 1.6rem)}
+    h3{margin:0 0 .4rem; font-size: clamp(1.05rem, .95rem + .5vw, 1.25rem)}
+    p{margin:.4rem 0 0; line-height:1.75}
+    ul{margin:.2rem 0 0; padding-left:1.1rem}
+    li{margin:.3rem 0}
+    code{background:var(--surface-2); padding:.12rem .35rem; border-radius:6px}
 
-Data sharing
+    .notice{display:flex; gap:.6rem; align-items:flex-start; border-left:3px solid var(--primary); padding:.75rem .9rem; background:var(--surface-2); border-radius:10px}
+    .footer{border-top:1px solid var(--border); padding: 1.25rem 0; margin-top: 1rem; text-align:center; color:var(--muted)}
+  </style>
+</head>
 
-With Google AdMob for advertising.
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-With Google Play for purchases/receipts.
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#" aria-label="BillMint">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-text">BillMint</span>
+      </a>
 
-With service providers that help us operate the app (hosting/analytics), under appropriate safeguards.
+      <div class="header-ctas">
+        <a class="btn btn-ghost" href="https://francisoyitoba.com" target="_blank" rel="noopener">Back to Portfolio</a>
+        <button class="theme-toggle" id="themeToggle" aria-pressed="false" aria-label="Toggle dark mode">
+          <i class="fa-solid fa-moon icon-moon" aria-hidden="true"></i>
+          <i class="fa-solid fa-sun icon-sun" aria-hidden="true"></i>
+          <span class="theme-label">Dark</span>
+        </button>
+      </div>
+    </div>
+  </header>
 
-We do not sell personal data.
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Policy</p>
+        <h1>BillMint – Privacy Policy</h1>
+        <p class="lead">
+          Effective date: <strong>29 Aug 2025</strong>
+        </p>
+        <div class="notice" role="note" aria-label="Summary">
+          <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+          <p class="muted">
+            BillMint helps you create invoices/receipts and manage client records. This policy explains what we collect, how we use it, and the choices you have.
+          </p>
+        </div>
+      </div>
+    </section>
 
-Data retention
-We keep your data while your account is active or as required by law. You can request deletion (contact below).
+    <!-- TOC -->
+    <section class="section">
+      <div class="container">
+        <nav class="toc" aria-label="On-page navigation">
+          <h2>Table of contents</h2>
+          <ul>
+            <li><a href="#who-we-are">Who we are</a></li>
+            <li><a href="#information-we-collect">Information we collect</a></li>
+            <li><a href="#how-we-use-information">How we use information</a></li>
+            <li><a href="#ads-consent">Ads & consent (EEA/UK)</a></li>
+            <li><a href="#data-sharing">Data sharing</a></li>
+            <li><a href="#data-retention">Data retention</a></li>
+            <li><a href="#security">Security</a></li>
+            <li><a href="#your-choices">Your choices</a></li>
+            <li><a href="#children">Children</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#changes">Changes</a></li>
+            <li><a href="#third-party">Third-party disclosures</a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
 
-Security
-We use reasonable administrative and technical measures to protect your information.
+    <!-- Content -->
+    <section class="section">
+      <div class="container stack">
+        <article id="who-we-are" class="card">
+          <h2>Who we are</h2>
+          <p>BillMint (“we”, “our”, “us”) helps you create invoices/receipts and manage client records.</p>
+        </article>
 
-Your choices
+        <article id="information-we-collect" class="card">
+          <h2>Information we collect</h2>
+          <ul>
+            <li><strong>Account info:</strong> Email (when you sign in with Google).</li>
+            <li><strong>Business data:</strong> Client names, invoice/receipt details you save.</li>
+            <li><strong>Device info:</strong> App version, device model, IP address.</li>
+            <li><strong>Advertising data:</strong> Through Google AdMob (may use device identifiers such as the Advertising ID).</li>
+            <li><strong>Purchases:</strong> Google Play billing status for “Remove Ads”.</li>
+          </ul>
+        </article>
 
-In Settings or the consent form (EEA/UK), you can manage ad consent.
+        <article id="how-we-use-information" class="card">
+          <h2>How we use information</h2>
+          <ul>
+            <li>Provide core features (invoices, receipts, clients).</li>
+            <li>Sync your data with our servers (if applicable).</li>
+            <li>Show ads via Google AdMob (or hide them if you purchase “Remove Ads”).</li>
+            <li>Improve stability and detect abuse.</li>
+          </ul>
+        </article>
 
-You may purchase “Remove Ads” (no ads experience).
+        <article id="ads-consent" class="card">
+          <h2>Ads & consent (EEA/UK)</h2>
+          <p>We use Google AdMob. In the EEA/UK we use Google’s User Messaging Platform (UMP) to collect your consent for personalized or non-personalized ads, or to reject ads where applicable.</p>
+        </article>
 
-You can contact us to access or delete your data.
+        <article id="data-sharing" class="card">
+          <h2>Data sharing</h2>
+          <ul>
+            <li>With Google AdMob for advertising.</li>
+            <li>With Google Play for purchases/receipts.</li>
+            <li>With service providers that help us operate the app (hosting/analytics), under appropriate safeguards.</li>
+          </ul>
+          <p><strong>We do not sell personal data.</strong></p>
+        </article>
 
-Children
-BillMint is intended for general audiences and not directed to children under the age of digital consent. We do not knowingly collect data from children.
+        <article id="data-retention" class="card">
+          <h2>Data retention</h2>
+          <p>We keep your data while your account is active or as required by law. You can request deletion (see contact below).</p>
+        </article>
 
-Contact
-Email: your-support-email@example.com
+        <article id="security" class="card">
+          <h2>Security</h2>
+          <p>We use reasonable administrative and technical measures to protect your information.</p>
+        </article>
 
-Address (optional): Company or developer address if applicable
+        <article id="your-choices" class="card">
+          <h2>Your choices</h2>
+          <ul>
+            <li>In Settings or the consent form (EEA/UK), you can manage ad consent.</li>
+            <li>You may purchase “Remove Ads” (no ads experience).</li>
+            <li>You can contact us to access or delete your data.</li>
+          </ul>
+        </article>
 
-Changes
-We may update this policy and will update the “Effective date” above when we do.
+        <article id="children" class="card">
+          <h2>Children</h2>
+          <p>BillMint is intended for general audiences and not directed to children under the age of digital consent. We do not knowingly collect data from children.</p>
+        </article>
 
-Third-party disclosures
+        <article id="contact" class="card">
+          <h2>Contact</h2>
+          <p>Email: <a href="mailto:contact@francisoyitoba.com">contact@francisoyitoba.com</a></p>
+          <p>Address (optional): Company or developer address if applicable</p>
+          <p>For more information about my work, visit my portfolio: <a href="https://francisoyitoba.com" target="_blank" rel="noopener">francisoyitoba.com</a></p>
+        </article>
 
-Google AdMob privacy: https://policies.google.com/technologies/ads
+        <article id="changes" class="card">
+          <h2>Changes</h2>
+          <p>We may update this policy and will update the “Effective date” above when we do.</p>
+        </article>
 
-Google Play billing: https://support.google.com/googleplay/
+        <article id="third-party" class="card">
+          <h2>Third-party disclosures</h2>
+          <ul>
+            <li>Google AdMob privacy: <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">https://policies.google.com/technologies/ads</a></li>
+            <li>Google Play billing: <a href="https://support.google.com/googleplay/" target="_blank" rel="noopener">https://support.google.com/googleplay/</a></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div>© <span id="y"></span> BillMint</div>
+      <div class="muted">This page uses a light/dark theme. Use the toggle at the top right.</div>
+    </div>
+  </footer>
+
+  <!-- Theme toggle + small helpers -->
+  <script>
+    // Year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Theme toggle
+    const toggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
+    function setTheme(mode){
+      root.setAttribute('data-theme', mode);
+      try { localStorage.setItem('theme', mode); } catch(e){}
+      const dark = mode === 'dark';
+      toggle?.setAttribute('aria-pressed', dark ? 'true' : 'false');
+      const label = toggle?.querySelector('.theme-label');
+      if (label) label.textContent = dark ? 'Light' : 'Dark';
+    }
+    if (toggle){
+      setTheme(root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
+      toggle.addEventListener('click', () => {
+        const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        setTheme(next);
+      });
+    }
+
+    // Smooth scroll for in-page links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if (el){
+          e.preventDefault();
+          el.scrollIntoView({behavior:'smooth', block:'start'});
+          history.replaceState(null, '', '#'+id);
+        }
+      });
+    });
+  </script>
+
+  <!-- JSON-LD (PrivacyPolicy) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"PrivacyPolicy",
+    "name":"BillMint — Privacy Policy",
+    "inLanguage":"en",
+    "isAccessibleForFree": true,
+    "datePublished":"2025-08-29",
+    "dateModified":"2025-08-29",
+    "publisher":{
+      "@type":"Person",
+      "name":"Francis Oyitoba",
+      "url":"https://francisoyitoba.com",
+      "email":"mailto:contact@francisoyitoba.com"
+    },
+    "url":"https://francisoyitoba.com",
+    "hasPart":[
+      {"@type":"WebPageElement","name":"Who we are"},
+      {"@type":"WebPageElement","name":"Information we collect"},
+      {"@type":"WebPageElement","name":"How we use information"},
+      {"@type":"WebPageElement","name":"Ads & consent (EEA/UK)"},
+      {"@type":"WebPageElement","name":"Data sharing"},
+      {"@type":"WebPageElement","name":"Data retention"},
+      {"@type":"WebPageElement","name":"Security"},
+      {"@type":"WebPageElement","name":"Your choices"},
+      {"@type":"WebPageElement","name":"Children"},
+      {"@type":"WebPageElement","name":"Contact"},
+      {"@type":"WebPageElement","name":"Changes"},
+      {"@type":"WebPageElement","name":"Third-party disclosures"}
+    ]
+  }
+  </script>
+</body>
+</html>
+
